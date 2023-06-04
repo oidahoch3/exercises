@@ -26,13 +26,11 @@
 
 # Note: The final output should be sorted alphabetically by category.
 
-
-shopping_list = {
-
-}
+shopping_list = {}
 
 while True:
-    add = input('Enter an item and its category (or enter "done" to finish):')
+    add = input('Enter an item and its category (or enter "done" to finish): ')
+
     if add == 'done':
         break
 
