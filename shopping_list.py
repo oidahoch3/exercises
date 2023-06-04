@@ -32,7 +32,7 @@ shopping_list = {
 }
 
 while True:
-    add = input('Enter item, category or done to finish:')
+    add = input('Enter an item and its category (or enter "done" to finish):')
     if add == 'done':
         break
 
@@ -44,4 +44,6 @@ while True:
     shopping_list[category].append(item)
 
 for category in shopping_list:
+    shopping_list[category].sort()
     print(category, ':', ', '.join(shopping_list[category]))
+
