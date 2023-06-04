@@ -43,9 +43,7 @@ while True:
 
     shopping_list[category].append(item)
 
-sorted_shopping_list = {k: shopping_list[k] for k in sorted(shopping_list.keys())}
+for category in sorted(shopping_list.keys()):
+    sorted_list = sorted(shopping_list[category])
 
-for category in sorted_shopping_list:
-    sorted_shopping_list[category].sort()
-    print(category, ':', ', '.join(sorted_shopping_list[category]))
-
+    print(category + ':', ', '.join(sorted_list))
