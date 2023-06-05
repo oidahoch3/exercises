@@ -36,6 +36,10 @@
 # Note: The numbers should be classified and stored in the respective lists based on the given rules.
 
 numbers = []
+even_numbers = []
+odd_numbers = []
+negative_numbers = []
+zero_numbers = []
 
 while True:
     add = input('enter a number or done to finish: ')
@@ -45,4 +49,7 @@ while True:
     except ValueError:
         break
 
-print(numbers)
+    if add == '0':
+        zero_numbers.append(add)
+
+print(zero_numbers)
