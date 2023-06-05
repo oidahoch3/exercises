@@ -36,20 +36,32 @@
 # Note: The numbers should be classified and stored in the respective lists based on the given rules.
 
 numbers = []
-even_numbers = []
-odd_numbers = []
-negative_numbers = []
-zero_numbers = []
 
 while True:
-    add = input('enter a number or done to finish: ')
+    add = input('Enter a number or done to finish: ')
 
     try:
         numbers.append(int(add))
     except ValueError:
         break
 
-    if add == '0':
-        zero_numbers.append(add)
+even_numbers = []
+odd_numbers = []
+negative_numbers = []
+zero_numbers = []
 
-print(zero_numbers)
+for number in numbers:
+    if number > 0:
+        if (number % 2) == 0:
+            even_numbers.append(str(number))
+        else:
+            odd_numbers.append(str(number))
+    elif number < 0:
+        negative_numbers.append(str(number))
+    else:
+        zero_numbers.append(str(number))
+
+print('Even numbers:', ', '.join(even_numbers))
+print('Odd numbers:', ', '.join(odd_numbers))
+print('Negative numbers:', ', '.join(negative_numbers))
+print('Zero numbers:', ', '.join(zero_numbers))
