@@ -44,11 +44,18 @@ while True:
     except ValueError:  # if the input is no number, the loop stops
         break
 
-sumOfTemp = sum(temperature)
-countTemp = len(temperature)
+threshold = float(input('Enter a threshold for the temperature: '))  # asking for another input to determine a threshold
+
+above_threshold = [temp for temp in temperature if
+                   temp > threshold]  # creating a list where all the temps above the threshold are added
+count_above_threshold = len(above_threshold)  # creating a variable that tells me the length of the list i just created
+
+sumOfTemp = sum(temperature)  # getting the sum of all the entered temps
+countTemp = len(temperature)  # getting the amount of how many values are in the list
 
 aveTemp = sumOfTemp / countTemp  # calculating average temperature
 
 print('The average Temperature is: ', aveTemp)
 print('The highest Temperature is: ', max(temperature))  # finding the max value in the temp list
 print('The lowest Temperature is: ', min(temperature))  # finding the min value in the temp list
+print('Number of temperatures above threshold', threshold, ':', count_above_threshold)
