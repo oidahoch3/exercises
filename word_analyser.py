@@ -33,11 +33,22 @@
 words = []
 
 while True:
-    word = input('Enter a word: ')
+    word = input('Enter a word: ')  # asking for input
 
-    if word == '':
+    if word == '':  # if the input equals '', the while loop breaks
         break
 
-    words.append(word)
+    words.append(word)  # the input is added to the words list
 
-print('Longest word', max(words, key=len))
+vowel_list = []  # creating a list where all the words that start with a vowel will be added
+vowel = ['a', 'e', 'i', 'o', 'u']  # creating a list with all vowels to check the words against that
+for index in words:  # checking all the words ind the words list
+    if index[0].lower() in vowel:  # if the first letter (indicated by the [0]) is a vowel,
+        # the word will be added to the list.
+        # .lower() converts everything to lowercase
+        vowel_list.append(index)
+
+print('List of words:', ', '.join(words))  # printing the results
+print('Longest word:', max(words, key=len))
+print('Shortest word:', min(words, key=len))
+print('Number of words starting with a vowel:', len(vowel_list))
