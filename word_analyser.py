@@ -38,7 +38,10 @@ while True:
     if word == '':  # if the input equals '', the while loop breaks
         break
 
-    words.append(word)  # the input is added to the words list
+    if not word.isdigit():  # checking if the input is a digit
+        words.append(word)  # if it is no digit, it will be added to the list
+    else:
+        print('Invalid input. Try again.')  # if it is a digit, it will print this statement
 
 vowel_list = []  # creating a list where all the words that start with a vowel will be added
 vowel = ['a', 'e', 'i', 'o', 'u']  # creating a list with all vowels to check the words against that
