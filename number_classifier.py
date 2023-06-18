@@ -35,33 +35,33 @@
 #
 # Note: The numbers should be classified and stored in the respective lists based on the given rules.
 
-numbers = []
+numbers = []  # creating a list
 
 while True:
-    add = input('Enter a number or done to finish: ')
+    add = input('Enter a number or done to finish: ')  # asking for input
 
     try:
-        numbers.append(int(add))
-    except ValueError:
+        numbers.append(int(add))  # if the input is an int, it will be added to the lsit
+    except ValueError:  # if it is not an int, the loop breaks
         break
 
-even_numbers = []
+even_numbers = []  # creating lists
 odd_numbers = []
 negative_numbers = []
 zero_numbers = []
 
-for number in numbers:
-    if number > 0:
-        if (number % 2) == 0:
+for number in numbers:  # going through all the numbers in the numbers list to check for certain parameters
+    if number > 0:  # checking if number is bigger than 0
+        if (number % 2) == 0:  # checking if number is even (if it is dividable by 2 without 'rest')
             even_numbers.append(str(number))
         else:
             odd_numbers.append(str(number))
-    elif number < 0:
+    elif number < 0:  # checking if the number is below 0
         negative_numbers.append(str(number))
-    else:
+    else:  # number is 0
         zero_numbers.append(str(number))
 
-print('Even numbers:', ', '.join(even_numbers))
+print('Even numbers:', ', '.join(even_numbers))  # printing results
 print('Odd numbers:', ', '.join(odd_numbers))
 print('Negative numbers:', ', '.join(negative_numbers))
 print('Zero numbers:', ', '.join(zero_numbers))
