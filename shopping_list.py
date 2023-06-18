@@ -26,22 +26,24 @@
 
 # Note: The final output should be sorted alphabetically by category.
 
-shopping_list = {}
+shopping_list = {}  # creating a dict
 
 while True:
     add = input('Enter an item and its category (or enter "done" to finish): ')
 
-    if add == 'done':
+    if add == 'done':  # asking for input and breaking the loop
         break
 
-    item, category = add.split(', ')
+    item, category = add.split(', ')  # categorise the input into 'item' and 'category'
 
-    if category not in shopping_list:
-        shopping_list[category] = []
+    if category not in shopping_list:  # checking if the category already exists in the dictionary
+        shopping_list[category] = []  # if is does not exist, a new empty list within the shopping list dictionary
+        # with the name of the category is created.
 
-    shopping_list[category].append(item)
+    shopping_list[category].append(item)  # if it already exists, the item is added to the respective
+    # category list within the dictionary
 
-for category in sorted(shopping_list.keys()):
+for category in sorted(shopping_list.keys()):  # the lists are sorted alphabetically
     sorted_list = sorted(shopping_list[category])
 
     print(category + ':', ', '.join(sorted_list))
