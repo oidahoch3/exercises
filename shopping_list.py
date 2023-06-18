@@ -29,9 +29,9 @@
 shopping_list = {}  # creating a dict
 
 while True:
-    add = input('Enter an item and its category (or enter "done" to finish): ')
+    add = input('Enter an item and its category (or enter "done" to finish): ')  # asking for input
 
-    if add == 'done':  # asking for input and breaking the loop
+    if add == 'done':  # breaking the loop
         break
 
     item, category = add.split(', ')  # categorise the input into 'item' and 'category'
