@@ -45,14 +45,29 @@ text = input('Enter paragraph:')  # asking for input
 
 nr_sentences = len(re.findall(r'[^?!.][?!.]', text))  # counting sentences by counting '.?!' if they follow NOT '.?!'
 
-words = text.split()  # splitting the input into words
-word_lengths = [len(w) for w in words]  # figuring out the length of each word
+words = text.lower()
+sorted_words = words.translate(str.maketrans('', '', string.punctuation))
+sorted_words = sorted_words.split()  # splitting the input into words
 
-avg_word_length = sum(word_lengths) / len(words)  # calculating average word length
+word_lengths = [len(w) for w in sorted_words]  # figuring out the length of each word
 
-avg_sentence_length = len(words) / nr_sentences
+avg_word_length = sum(word_lengths) / len(sorted_words)  # calculating average word length
+
+avg_sentence_length = len(sorted_words) / nr_sentences  # calculating average sentence length
+
+common_words = {}
+
+for word in sorted_words:
+    if word not in common_words:
+        common_words[word] = 0
+
+    common_words[word] += 1
+
+sorted_words_list = sorted(common_words.items(), key=lambda item: item[1], reverse=True)
 
 print('Number of sentences:', nr_sentences)
-print('Number of words:', len(words))
+print('Number of words:', len(sorted_words))
 print('Average word length:', avg_word_length)
 print('Average sentence length:', avg_sentence_length)
+print('Most common words (top 3):', sorted_words_list)
+print('Longest word:', max(sorted_words, key=len))
