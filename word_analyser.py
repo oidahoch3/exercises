@@ -1,10 +1,13 @@
 # Exercise: Word Analyzer
 #
-# Write a program that analyzes a list of words and provides information about them. The program should perform the following tasks:
+# Write a program that analyzes a list of words and provides information about them. The program should perform the
+# following tasks:
 #
 # 1. Create an empty list called `words`.
 #
-# 2. Prompt the user to enter a series of words, one word per line. The user should enter each word and press Enter. To indicate that they are done entering words, the user should enter a non-alphabetic value (such as "done" or an empty line).
+# 2. Prompt the user to enter a series of words, one word per line. The user should enter each word and press Enter.
+# To indicate that they are done entering words, the user should enter a non-alphabetic value (such as "done" or an
+# empty line).
 #
 # 3. Use a loop to read each input word and append it to the `words` list.
 #

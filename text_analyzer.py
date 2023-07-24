@@ -64,11 +64,12 @@ for word in sorted_words:
     common_words[word] += 1
 
 sorted_words_list = sorted(common_words.items(), key=lambda item: item[1], reverse=True)
+common_words_output = [word[0] + ', ' + str(word[1]) for word in sorted_words_list[:3]]
 
 print('Number of sentences:', nr_sentences)
 print('Number of words:', len(sorted_words))
 print('Average word length:', avg_word_length)
 print('Average sentence length:', avg_sentence_length)
-print('Most common words (top 3):', sorted_words_list)
+print('Most common words (top 3): \n -', '\n - '.join(common_words_output))
 print('Longest word:', max(sorted_words, key=len))
 print('This is the paragraph reversed:', text[::-1])
