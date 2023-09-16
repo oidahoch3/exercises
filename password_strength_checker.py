@@ -46,5 +46,23 @@
 # Give it a try and see how well you can implement the password strength checking algorithm. If you have any questions
 # or need further assistance, feel free to ask!
 
+import string
+
 password = input('Enter a password:')
 
+
+
+validators = [
+    ('Minimum length is 8', lambda i: len(i) >= 8),
+    ('At least one uppercase character', lambda i: any(letter.isupper() for letter in password)),
+    ('At least one lowercase character', lambda i: any(letter.islower() for letter in password)),
+    ('At least one number', lambda i: any(letter.isdigit() for letter in password)),
+    ('At least one special character', lambda i: any(letter in string.punctuation for letter in password))
+]
+missing = []
+
+for (message, validator) in validators:
+    if not validator(password):
+        missing.append(message)
+
+print('Score:', str(len(validators) - len(missing)), '\n' + '\n'.join(missing))
